@@ -1,0 +1,16 @@
+version: "2"
+services:
+  publisher:
+    build: ./Pub
+    ports:
+      - "80:5001"
+   
+  subscriber:
+    build: ./Sub
+    depends_on:
+      - publisher
+    restart: always
+ 
+
+
+  

@@ -1,0 +1,8 @@
+curl -sL run.linkerd.io/install | sh
+linkerd version
+linkerd check --pre
+linkerd viz install | kubectl apply -f - # on-cluster metrics stack
+
+
+-- para ver el dashborad
+linkerd viz dashboard &

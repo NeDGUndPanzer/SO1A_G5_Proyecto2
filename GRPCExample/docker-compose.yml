@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+
+  grpc-client:
+      build: ./Client
+      ports:
+        - "2500:2500"
+      depends_on:
+        - grpc-server
+
+  grpc-server:
+      build: ./Server
+      
+      depends_on:
+        - mongo-server-kathy
+
+  mongo-server-kathy:
+      build: ./MongoServer
+
+
+

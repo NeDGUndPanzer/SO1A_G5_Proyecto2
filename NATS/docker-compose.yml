@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  server-nats:
+      image : nats
+      ports: 
+          - "4222:4222"
+          - "6222:6222"
+          - "8222:8222"
+
+  publisher-nats:
+      build: ./publisher
+      restart: on-failure
+      ports:
+        - "80:3000"
+      depends_on:
+        - server-nats
+
+  suscriber-nats:
+      build: ./suscriber
+      restart: on-failure
+      depends_on:
+        - server-nats

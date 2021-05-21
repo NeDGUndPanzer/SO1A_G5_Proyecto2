@@ -1,0 +1,13 @@
+apiVersion: split.smi-spec.io/v1alpha1
+kind: TrafficSplit
+metadata:
+  name: trafficspliter
+spec:
+  service: dummy
+  backends:
+  - service: grpcservice
+    weight: 500m
+  - service: redisservice
+    weight: 500m
+  - service: error-injector
+    weight: 0m

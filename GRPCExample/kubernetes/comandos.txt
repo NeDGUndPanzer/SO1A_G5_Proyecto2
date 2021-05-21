@@ -1,0 +1,9 @@
+-- publiser // es el client grpc
+docker build -t gcr.io/omega-will-307406/grpcpubliser .
+docker push gcr.io/omega-will-307406/grpcpubliser
+
+-- suscriber // es el server de grpc
+docker build -t gcr.io/omega-will-307406/grpcsuscriber .
+docker push gcr.io/omega-will-307406/grpcsuscriber
+
+

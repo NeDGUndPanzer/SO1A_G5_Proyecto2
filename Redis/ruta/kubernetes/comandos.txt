@@ -1,0 +1,4 @@
+-- publiser-subcriber // es el publiser y subcriber redisroute
+docker build -t gcr.io/omega-will-307406/rutaredis .
+docker push gcr.io/omega-will-307406/rutaredis
+
